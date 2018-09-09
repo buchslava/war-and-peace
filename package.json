@@ -1,0 +1,31 @@
+{
+  "name": "war-and-peace",
+  "version": "1.0.0",
+  "description": "presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape */*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buchslava/war-and-peace.git"
+  },
+  "keywords": [
+    "functional programming",
+    "javascript",
+    "human readable code"
+  ],
+  "author": "Vyacheslav Chub<vyacheslav.chub@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buchslava/war-and-peace/issues"
+  },
+  "homepage": "https://github.com/buchslava/war-and-peace#readme",
+  "dependencies": {
+    "lodash": "4.17.10",
+    "rxjs": "6.3.1",
+    "rxjs-compat": "6.3.1",
+    "tape": "4.9.1",
+    "uuid": "3.3.2"
+  }
+}
