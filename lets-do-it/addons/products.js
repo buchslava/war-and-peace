@@ -13,7 +13,7 @@ const _shouldBeNumber = (key, value) => {
   return [key, value];
 };
 
-function productsQuery() {
+module.exports.query = () => {
   let state = `SELECT name, price, unit FROM products WHERE group='#group#' #filter# #pagination#`;
   const _set = (key, value) => state = state.replace(`#${key}#`, value);
   const immediate = () => { _set('pagination', ''); _set('filter', ''); return state; };
@@ -39,24 +39,12 @@ function productsQuery() {
   }
 }
 
-console.log(productsQuery().forGroup('milk').filteredBy('price>10').onPage(5).withLimit(25));
-console.log(productsQuery().forGroup('milk').filteredBy('price>10').immediate());
-console.log(productsQuery().forGroup('milk').immediate());
-
-try {
-  console.log(productsQuery().forGroup('').immediate());
-} catch (e) {
-  console.log(e.message);
-}
-
-try {
-  console.log(productsQuery().forGroup('milk').filteredBy('').immediate());
-} catch (e) {
-  console.log(e.message);
-}
-
-try {
-  console.log(productsQuery().forGroup('milk').filteredBy('price>10').onPage().withLimit(25));
-} catch (e) {
-  console.log(e.message);
-}
+module.exports.productsBy = (...params) => storage => resolve => {
+  setTimeout(() => {
+    if (!storage.products) {
+      storage.products = [];
+    }
+    storage.products.push(`done products ${JSON.stringify(params, null, 2)}`);
+    resolve();
+  }, 5000);
+};

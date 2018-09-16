@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-function getProductsListQuery(productsGroup, filter, pageNum, limit) {
+function getProductsQuery(productsGroup, filter, pageNum, limit) {
   let sql = `SELECT name, price, unit FROM products WHERE group='${productsGroup}' #filter# #pagination#`;
 
   if (!productsGroup) {
@@ -24,6 +24,6 @@ function getProductsListQuery(productsGroup, filter, pageNum, limit) {
   return sql;
 }
 
-console.log(getProductsListQuery('milk', 'price>10', 5, 25));
-console.log(getProductsListQuery('milk', 'price>10'));
-console.log(getProductsListQuery('milk'));
+console.log(getProductsQuery('milk', 'price>10', 5, 25));
+console.log(getProductsQuery('milk', 'price>10'));
+console.log(getProductsQuery('milk'));
