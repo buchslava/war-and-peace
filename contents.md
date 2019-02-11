@@ -1,26 +1,45 @@
-# Talking Code in the Real World (The Art of Programming Language Speaking)
+# Talking Code in the Real World (The Art of Speaking Programming Language)
 
 ## Preface
 
-Humanity evolves quickly, but IT, as it sometimes seems to me, is even faster. Millions of lines of code appear every day. Some of them will not be alive till the end of the day, but some of them will live for decades. The latter tend to accumulate, and if they are unclear, then obscurity will accumulate with them. This kind of obscurity, I would say, global obscurity, is one of the problems of humanity, which is little talked about so far. The reasons for the appearance of such a code are not always obvious. The fact is that there is already a lot of good literature on this subject. Besides, year after year IT culture is growing. Despite the amount of incomprehensible code is growing. The goal of this book is to understand the non-obvious aspects of this situation and make some particular recommendations for its resolution.
+Humanity evolves quickly but IT moves even faster. Millions of lines of code appear every day. Some of them will not be alive by the end of the day but some of them will live for decades. The latter tend to accumulate and if they are unclear then a lack of clarity will accumulate with them. This lack of clarity, which I would call _“global obscurity”_, is one of the biggest problems facing humanity that doesn’t get enough attention. The reasons for the appearance of such code are not always obvious.
 
-### What This Book Is About
+While there is already a lot of good literature on this subject, with IT culture growing year on year. Despite this wealth of information the amount of incomprehensible code continues to grow. The goal of this book is to help you understand the less obvious aspects of this situation and to give some recommendations to resolve the crisis of _“global obscurity”_.
 
-This book is about how to write perfect, supportable and readable code that describes different ideas of `The World Around Us`. The main feature of this book is that the some approaches to software development described in it are unique and have not been previously used. In addition, the book presents good practical advice, which makes it interesting for different kind of readers. And most importantly, this book instills the idea that a programming language is just a language of communication along with natural language.
+## What This Book Is About
 
-### How to Read This Book
+This book is about how to write perfect, supportable and readable code that describes different ideas in _The World Around Us_. Many of the approaches to software development featured in this book are unique and have never been used or seen before. In addition, the book presents good practical advice which will make it interesting for many different kinds of readers. And, most importantly, this book will instil the idea that a programming language is just another language of communication, akin to the everyday, natural spoken languages that we all use.
 
-### Using Code Examples
+## How to Read This Book
 
-## Chapter 1
+## Using Code Examples
 
-### Is Unclear Code an Issue?
+## Is Unclear Code an Issue?
 
-Definitely, unclear code is an issue! But how often it happens? That is the question! Unfortunately, throughout my career, I have seen an incomprehensible or unclear code much more /often than/ clear. What does it say? I hope this book would be a good answer. It may seem that unclear code is an annoying situation from point of view of the individual developer like me at this moment. But in the context of all my past experience (I have been working on IT for more than 20 years), this problem takes on a more dramatic shade. I personally lost because of an incomprehensible code, it doesn’t matter of my code or someone else’s, years and years! But I am only one soldier from a million-strong army of IT. Let's imagine what the loss of working time, for this reason, is for the whole of Humanity! In this context, the situation becomes threatening. But is it really that bad? Let's dig deeper into the issue!
+**Unclear code** is definitely an issue! But how common is **unclear code**? That’s the question! Throughout my career I have seen incomprehensible or **unclear code** much more often than clear, unfortunately. What does this say about the way we write code? That’s what this book will answer. It may seem like unclear code is annoying from the point of view of an individual developer, which is something I can personally confirm. As someone who has worked in the IT industry for more than 20 years, in my experience this problem becomes more significant when we think about the accumulated time lost to **unclear code**. I have personally lost years and years of my life trying to understand **unclear code**, whether it’s my own code or someone else’s.
 
-### Two Kinds of Simplicity
+But I’m just one soldier in a million-strong army of IT professionals. Just imagine the total loss of working time across the whole of humanity! Thousands of hours of work, wasted every day. The situation could be seen as a serious threat for our industry. But is it really that bad? Let's dig deeper into the issue and find out!
 
-Simplicity is the state or quality of being simple. Something easy to understand or explain seems simple, in contrast to something complicated. Alternatively, as Herbert A. Simon suggests, something is simple or complex depending on the way we choose to describe it.[1] In some uses, the label "simplicity" can imply beauty, purity, or clarity /Wiki/
+## Two Kinds of Simplicity
+
+In order to understand the issue of unclear code, we should consider **Simplicity** term. In this case, **Simplicity** is a state when code should be completely understood as fast as possible. The definition above told us that **Simplicity** term is not homogenous. That is why it can be represented by different kinds or from different _points of view_.
+
+There are two interesting kinds of **Simplicity**: 
+
+* `Structural Simplicity`
+* `Conceptual Simplicity`
+
+The best way to understand what are the kinds of simplicity above is the ability to obtain real code examples. 
+
+### Structural Simplicity
+
+
+
+### Conceptual Simplicity
+
+
+
+<!--Simplicity is the state or quality of being simple. Something easy to understand or explain seems simple, in contrast to something complicated. Alternatively, as Herbert A. Simon suggests, something is simple or complex depending on the way we choose to describe it.[1] In some uses, the label "simplicity" can imply beauty, purity, or clarity /Wiki/
 
 There are two fundamental ways to evaluate something or make judgments about something. These are `Form` then `Content`. Judgment by the `Form` is quick, superficial, efficient and allows you to quickly assess the situation in the future. On the contrary, the judgment by the `Content` is slow, analytical and allows you to look at the root of the problem, that is, to understand the reason for the issue. But how these ideas are related to code. This question should be considered in the context of such a thing as code quality. So, we should try to apply the concepts of the `Form` and `Content` to the quality of the code. Obviously, one of important metrics of `Code Quality` is `Simplicity`. 
 
@@ -31,7 +50,7 @@ They are:
 * `Structural Simplicity`
 * `Conceptual Simplicity`
 
-So, let's associate judgment by the `Form` to `Structural Simplicity` and judgment by the `Content` to `Conceptual Simplicity`. This rule would be useful when we need to understand what way to resolve the issue is an appropriate. More info I will provide a little bit later.
+So, let's associate judgment by the `Form` to `Structural Simplicity` and judgment by the `Content` to `Conceptual Simplicity`. This rule would be useful when we need to understand what way to resolve the issue is an appropriate. More info I will provide a little bit later.-->
 
 ### The Difference Between Structural Simplicity and Conceptual Simplicity
 
