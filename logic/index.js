@@ -48,4 +48,5 @@ while (activities.length > 0) {
     }
   }    
 }
-console.log(spendTime);
+
+console.log(Math.max(...spendTime.values()));
