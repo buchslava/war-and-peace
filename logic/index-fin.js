@@ -15,6 +15,22 @@ function getPermutations(choices) {
   return result;
 }
 
+function scatter(itObj, itSubj, matchFun, actionFun) {
+  while (itObj.length > 0) {
+    for (const subj of itSubj) {
+      for (let i = 0; i < itObj.length; i++) {
+        const obj = itObj[i];
+        if (matchFun(subj)) {
+          actionFun(subj, obj);
+          itObj.splice(i, 1);
+        } else {
+          continue;
+        }
+      }
+    }    
+  }
+}
+
 function spectaclePreparation(ratesByServices, staff, actors) {
   return Math.max(...howMachTimeWasSpent(forActivitiesList()).values());
 
@@ -39,21 +55,11 @@ function spectaclePreparation(ratesByServices, staff, actors) {
   function howMachTimeWasSpent(activities) {
     const spendTime = new Map(staff.map(s => [s, 0]));
 
-    while (activities.length > 0) {
-      for (const worker of staff) {
-        for (let i = 0; i < activities.length; i++) {
-          const activity = activities[i];
-
-          if (actualOnly(worker, spendTime)) {
-            spendTime.set(worker, spendTime.get(worker) + activity.rate);
-            // console.log(worker, activity);
-            activities.splice(i, 1);
-          } else {
-            continue;
-          }
-        }
-      }    
-    }
+    scatter(activities, staff, 
+      (subj) => actualOnly(subj, spendTime), 
+      (subj, obj) => {
+        spendTime.set(subj, spendTime.get(subj) + obj.rate);
+      });
 
     return spendTime;
   }
