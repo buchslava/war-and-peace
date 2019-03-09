@@ -15,13 +15,11 @@ function getPermutations(choices) {
   return result;
 }
 
-function spectaclePreparation() {
-  const me = spectaclePreparation;
-
-  return Math.max(...howMachTimeWasSpent(forActivitiesList(), actualOnly).values());
+function spectaclePreparation(ratesByServices, staff, actors) {
+  return Math.max(...howMachTimeWasSpent(forActivitiesList()).values());
 
   function actualOnly(worker, currentSpendTimeState) {
-    for (const currentWorker of me.staff) {
+    for (const currentWorker of staff) {
       if (currentWorker !== worker && currentSpendTimeState.get(currentWorker) < currentSpendTimeState.get(worker)) {
         return false;
       }
@@ -30,23 +28,23 @@ function spectaclePreparation() {
   }
   
   function forActivitiesList() {
-    const services = [...me.ratesByServices.keys()];
-    const activitiesArray = getPermutations([me.actors, services]);
+    const services = [...ratesByServices.keys()];
+    const activitiesArray = getPermutations([actors, services]);
 
     return activitiesArray.map(activity => ({
-      actor: activity[0], work: activity[1], rate: me.ratesByServices.get(activity[1])
+      actor: activity[0], work: activity[1], rate: ratesByServices.get(activity[1])
     })).sort((a, b) => a.rate < b.rate ? 1 : b.rate < a.rate ? -1 : 0);
   }
 
-  function howMachTimeWasSpent(activities, match) {
-    const spendTime = new Map(me.staff.map(s => [s, 0]));
+  function howMachTimeWasSpent(activities) {
+    const spendTime = new Map(staff.map(s => [s, 0]));
 
     while (activities.length > 0) {
-      for (const worker of me.staff) {
+      for (const worker of staff) {
         for (let i = 0; i < activities.length; i++) {
           const activity = activities[i];
 
-          if (match(worker, spendTime)) {
+          if (actualOnly(worker, spendTime)) {
             spendTime.set(worker, spendTime.get(worker) + activity.rate);
             // console.log(worker, activity);
             activities.splice(i, 1);
@@ -61,8 +59,8 @@ function spectaclePreparation() {
   }
 }
 
-spectaclePreparation.ratesByServices = new Map([['makeup', 30], ['hair style', 10]]);
-spectaclePreparation.staff = ['first makuper', 'second makeuper'];
-spectaclePreparation.actors = ['first actor', 'second actor', 'third actor'];
+const ratesByServices = new Map([['makeup', 30], ['hair style', 10]]);
+const staff = ['first makuper', 'second makeuper'];
+const actors = ['first actor', 'second actor', 'third actor'];
 
-console.log(spectaclePreparation());
+console.log(spectaclePreparation(ratesByServices, staff, actors));
